@@ -16,7 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-EditText number;
+TextView number;
+int num;
 Button zero;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +26,18 @@ Button zero;
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         final TextView number;
+        number= findViewById(R.id.number);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText number
+            num = Integer.parseInt(number.getText().toString());
+            num++;
+            number.setText(""+num);
             }
 
         });
+
     }
 
     @Override
